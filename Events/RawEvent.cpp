@@ -5,29 +5,68 @@
 #include <string>
 #include <vector>
 #include "RawEvent.h"
+#include "../Resources/Enemy.cpp"
+#include "../Resources/Chest.cpp"
 
 namespace REVNT
 {// Types | 0: Enemy 1: Object Intractable 2: Custom
 	class RawEvent
 	{
 	private:
-		std::vector<std::vector<std::string>> ttv;
+		std::vector<std::string> ttv;
 		std::string text;
+		EMY::Enemy enemy;
+		CHT::Chest chest;
 		int type;
 	public:
 		RawEvent()
 		{
-			//Init of the Object
-			for (int i = 0; i != 3; i++)
-				ttv.push_back(std::vector<std::string>());
+			type = rand() % 2;
 
-			ttv[0].push_back("");
-			ttv[1].push_back("");
-			ttv[2].push_back("");
+			if (type == 0)
+			{
+				ttv.push_back("A " + enemy.getName() + " has appeared... What will you do?");
+				ttv.push_back("You hear footsteps behind you, you turn around and see a "+ enemy.getName() +" ready to attack.");
+				enemy = EMY::Enemy();
 
-			//Actual event generation
-			type = rand() % 3;
+				text = ttv[rand() % ttv.size()];
+			}
+			if (type == 1)
+			{
+				ttv.push_back("You come across a mysterious chest");
+				ttv.push_back("You wipe the sweat of your face and blink, when you open your eyes again a chest has appeared.");
+				chest = CHT::Chest();
 
+				text = ttv[rand() % ttv.size()];
+			}
+			if(type == 2)
+			{
+				ttv.push_back("");
+
+				text = ttv[rand() % ttv.size()];
+			}
+
+
+		}
+
+		std::string getText()
+		{
+			return text;
+		}
+
+		EMY::Enemy getEnemy()
+		{
+			return enemy;
+		}
+
+		CHT::Chest getChest()
+		{
+			return chest;
+		}
+
+		int getType()
+		{
+			return type;
 		}
 	};
 }

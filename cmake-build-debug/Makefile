@@ -221,6 +221,33 @@ Player/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
+Resources/Chest.o: Resources/Chest.cpp.o
+
+.PHONY : Resources/Chest.o
+
+# target to build an object file
+Resources/Chest.cpp.o:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.o
+.PHONY : Resources/Chest.cpp.o
+
+Resources/Chest.i: Resources/Chest.cpp.i
+
+.PHONY : Resources/Chest.i
+
+# target to preprocess a source file
+Resources/Chest.cpp.i:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.i
+.PHONY : Resources/Chest.cpp.i
+
+Resources/Chest.s: Resources/Chest.cpp.s
+
+.PHONY : Resources/Chest.s
+
+# target to generate assembly for a file
+Resources/Chest.cpp.s:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.s
+.PHONY : Resources/Chest.cpp.s
+
 Resources/Enemy.o: Resources/Enemy.cpp.o
 
 .PHONY : Resources/Enemy.o
@@ -320,6 +347,9 @@ help:
 	@echo "... Player/Player.o"
 	@echo "... Player/Player.i"
 	@echo "... Player/Player.s"
+	@echo "... Resources/Chest.o"
+	@echo "... Resources/Chest.i"
+	@echo "... Resources/Chest.s"
 	@echo "... Resources/Enemy.o"
 	@echo "... Resources/Enemy.i"
 	@echo "... Resources/Enemy.s"

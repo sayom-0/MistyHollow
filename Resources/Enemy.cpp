@@ -22,6 +22,11 @@ namespace EMY
 			dmg = rand() % 3;
 		}
 
+		std::string getName()
+		{
+			return name;
+		}
+
 
 	};
 }

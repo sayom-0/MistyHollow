@@ -100,6 +100,12 @@
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Player/Player.h">
 			<Option target="Hollow"/>
 		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Chest.cpp">
+			<Option target="Hollow"/>
+		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Chest.h">
+			<Option target="Hollow"/>
+		</Unit>
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Enemy.cpp">
 			<Option target="Hollow"/>
 		</Unit>

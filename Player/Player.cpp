@@ -44,11 +44,22 @@ namespace PLY
 
 		string purchase(IT::Item i);
 
-		string handleEvent(EVNT::RandomEvent rv);
+		string handleEvent(EVNT::RandomEvent rv)
+		{
 
-		int attack();
+		}
 
-		int splattack();
+		int attack()// Eventually I should make a real combat system
+		{
+			return 5;
+		}
+
+		int splattack()
+		{
+			manaCur--;
+
+			return attack() + (attack() * 0.5);
+		}
 
 		void dmg(int i)
 		{
@@ -63,7 +74,7 @@ namespace PLY
 
 		bool isDead()
 		{
-			if(healthCur > 0)
+			if (healthCur > 0)
 				return true;
 			return false;
 		}

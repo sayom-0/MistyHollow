@@ -167,6 +167,33 @@ Events/RandomEvent.cpp.s:
 	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.s
 .PHONY : Events/RandomEvent.cpp.s
 
+Events/RawEvent.o: Events/RawEvent.cpp.o
+
+.PHONY : Events/RawEvent.o
+
+# target to build an object file
+Events/RawEvent.cpp.o:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.o
+.PHONY : Events/RawEvent.cpp.o
+
+Events/RawEvent.i: Events/RawEvent.cpp.i
+
+.PHONY : Events/RawEvent.i
+
+# target to preprocess a source file
+Events/RawEvent.cpp.i:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.i
+.PHONY : Events/RawEvent.cpp.i
+
+Events/RawEvent.s: Events/RawEvent.cpp.s
+
+.PHONY : Events/RawEvent.s
+
+# target to generate assembly for a file
+Events/RawEvent.cpp.s:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.s
+.PHONY : Events/RawEvent.cpp.s
+
 Player/Player.o: Player/Player.cpp.o
 
 .PHONY : Player/Player.o
@@ -287,6 +314,9 @@ help:
 	@echo "... Events/RandomEvent.o"
 	@echo "... Events/RandomEvent.i"
 	@echo "... Events/RandomEvent.s"
+	@echo "... Events/RawEvent.o"
+	@echo "... Events/RawEvent.i"
+	@echo "... Events/RawEvent.s"
 	@echo "... Player/Player.o"
 	@echo "... Player/Player.i"
 	@echo "... Player/Player.s"

@@ -4,6 +4,7 @@
 
 #include <string>
 #include "RandomEvent.h"
+#include "RawEvent.cpp"
 
 namespace EVNT
 {
@@ -11,6 +12,14 @@ namespace EVNT
 	{
 	private:
 		std::string text;
+		std::string opt;
+		RawEvent iev;
+		bool hasEnemy;
+
 	public:
+		RandomEvent()
+		{
+
+		}
 	};
 }

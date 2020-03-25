@@ -88,6 +88,12 @@
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Events/RandomEvent.h">
 			<Option target="Hollow"/>
 		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Events/RawEvent.cpp">
+			<Option target="Hollow"/>
+		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Events/RawEvent.h">
+			<Option target="Hollow"/>
+		</Unit>
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Player/Player.cpp">
 			<Option target="Hollow"/>
 		</Unit>

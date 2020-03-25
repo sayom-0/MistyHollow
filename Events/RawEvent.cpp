@@ -18,6 +18,7 @@ namespace REVNT
 		EMY::Enemy enemy;
 		CHT::Chest chest;
 		int type;
+		bool fin;
 	public:
 		RawEvent()
 		{
@@ -26,20 +27,23 @@ namespace REVNT
 			if (type == 0)
 			{
 				ttv.push_back("A " + enemy.getName() + " has appeared... What will you do?");
-				ttv.push_back("You hear footsteps behind you, you turn around and see a "+ enemy.getName() +" ready to attack.");
+				ttv.push_back("You hear footsteps behind you, you turn around and see a " + enemy.getName() +
+							  " ready to attack.");
 				enemy = EMY::Enemy();
 
 				text = ttv[rand() % ttv.size()];
 			}
 			if (type == 1)
 			{
-				ttv.push_back("You come across a mysterious chest");
-				ttv.push_back("You wipe the sweat of your face and blink, when you open your eyes again a chest has appeared.");
 				chest = CHT::Chest();
+				ttv.push_back("You come across a mysterious " + chest.getType() + " chest");
+				ttv.push_back(
+						"You wipe the sweat of your face and blink, when you open your eyes again a " +
+						chest.getType() + " chest has appeared.");
 
 				text = ttv[rand() % ttv.size()];
 			}
-			if(type == 2)
+			if (type == 2)
 			{
 				ttv.push_back("");
 
@@ -67,6 +71,11 @@ namespace REVNT
 		int getType()
 		{
 			return type;
+		}
+
+		bool isOver()
+		{
+			return fin;
 		}
 	};
 }

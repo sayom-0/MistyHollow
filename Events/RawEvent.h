@@ -9,6 +9,8 @@
 class RawEvent
 {
 
+public:
+	std::string getText();
 };
 
 

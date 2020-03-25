@@ -3,6 +3,7 @@
 //
 
 #include <vector>
+#include <iostream>
 #include "Player.h"
 #include "../Events/RandomEvent.cpp"
 
@@ -46,7 +47,34 @@ namespace PLY
 
 		string handleEvent(EVNT::RandomEvent rv)
 		{
+			std::cout << rv.getText() << std::endl;
+			while (!rv.isOver())
+			{
+				std::cout << rv.getOpt() << std::endl;
+				int opt;
+				std::cin >> opt;
+				if (rv.getType() == 0)
+					if (opt == 1)
+						std::cout << "" << std::endl;
+					else if (opt == 2)
+						std::cout << "" << std::endl;
+					else if (opt == 3)
+					{
+						std::cout << "" << std::endl;
+						break;
+					} else
+						std::cout << "Plagued by indecision, you freeze" << std::endl;
+				else if (rv.getType() == 1)
+					if (opt == 1)
+					{
+						std::cout << "You approach the Chest, And open it." << std::endl;
+					} else
+					{
+						std::cout << "You pay the chest no mind and continue though Misty Hollow..." << std::endl;
+						break;
+					}
 
+			}
 		}
 
 		int attack()// Eventually I should make a real combat system
@@ -75,8 +103,8 @@ namespace PLY
 		bool isDead()
 		{
 			if (healthCur > 0)
-				return true;
-			return false;
+				return false;
+			return true;
 		}
 
 	};

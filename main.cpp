@@ -1,23 +1,39 @@
 #include <iostream>
 #include "Player/Player.cpp"
 
+void hold();
+
 using namespace std;
 
 int main()
 {
-	cout << "	--- MistyHollow Alpha 4 C++20 ---	" << endl;
-	cout << "	Developed by Sayom tal Rasha \"I'm just a simple CS student trying to make my way in the universe\"" << endl;
+	cout << "	--- MistyHollow Alpha 5 C++20 ---	" << endl;
+	cout << "	Developed by Sayom tal Rasha \"I'm just a simple CS student trying to make my way in the universe\""
+		 << endl;
 
 	cout << "What is your name, Hollow One?" << endl;
 	string input;
 	cin >> input;
 	PLY::Player ply = PLY::Player(input);
-	cout << "Well, " + input + " , welcome to Misty Hollow, you can find yourself here..." << endl
-		 << "You wake up lost in an empty town, wondering why no one else is around..." << endl;
+	cout << "Well, " + input + " , welcome to Misty Hollow, you can find yourself here..." << endl;
+	hold();
+	cout << "You wake up lost in an empty town, wondering why no one else is around..." << endl;
+	hold();
 	while (!ply.isDead())
 	{
 		ply.handleEvent(EVNT::RandomEvent());
 	}
 	cout << "Well " + input + ", its a shame you wont live, but then again, who really does?" << endl;
 	return 0;
+}
+
+void hold()
+{
+	std::cout << "Press 0 to Continue" << std::endl;
+	char enter;
+
+	do
+	{
+		std::cin.get(enter);
+	} while (enter != '0');
 }

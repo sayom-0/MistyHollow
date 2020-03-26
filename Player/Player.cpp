@@ -60,20 +60,27 @@ namespace PLY
 					if (opt == 1)
 					{
 						std::cout << "You attack the enemy for " + std::to_string(attack()) + " damage." << std::endl;
+						hold();
 						rv.getEnemy().hit(attack());
 						enemyDeath(rv);
+						hold();
 					} else if (opt == 2)
 					{
 						int dv = splattack();
 						std::cout << "You smite the enemy for " + std::to_string(dv) + " damage." << std::endl;
+						hold();
 						rv.getEnemy().hit(dv);
 						enemyDeath(rv);
+						hold();
 					} else if (opt == 3)
 					{
 						std::cout << "You run in the opposite direction as fast as you can." << std::endl;
 						break;
 					} else
+					{
 						std::cout << "Plagued by indecision, you freeze." << std::endl;
+						hold();
+					}
 				else if (rv.getType() == 1)
 					if (opt == 1)
 					{
@@ -83,15 +90,18 @@ namespace PLY
 							healthCur -= rv.open();
 							std::cout << "The chest explodes dealing " + std::to_string(rv.open()) + " damage."
 									  << std::endl;
+							hold();
 						} else
 						{
 							gold += rv.open();
 							std::cout << "You find " + std::to_string(rv.open()) + " gold in the chest." << std::endl;
+							hold();
 						}
 						break;
 					} else
 					{
 						std::cout << "You pay the chest no mind and continue though Misty Hollow..." << std::endl;
+						hold();
 						break;
 					}
 			}
@@ -125,6 +135,7 @@ namespace PLY
 				std::cout << "The enemy strikes you for " + std::to_string(rv.getEnemy().attack()) + " damage!"
 						  << std::endl;
 				healthCur -= rv.getEnemy().attack();
+				hold();
 				if (isDead())
 					rv.over();
 			}
@@ -162,6 +173,17 @@ namespace PLY
 			if (healthCur > 0)
 				return false;
 			return true;
+		}
+
+		void hold()
+		{
+			std::cout << "Press 0 to Continue" << std::endl;
+			char enter;
+
+			do
+			{
+				std::cin.get(enter);
+			} while (enter != '0');
 		}
 
 	};

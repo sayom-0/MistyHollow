@@ -20,7 +20,8 @@ namespace EMY
 		Enemy()
 		{
 			name = "Generic Enemy";
-			health = (rand() % 8) + 1;
+			srand(time(0));
+			health = rand() % 8;
 			dmg = rand() % 5;
 			safeLoot = rand() % 2;
 			std::cout << "Health (INIT) : " + std::to_string(health) << std::endl;
@@ -33,7 +34,7 @@ namespace EMY
 
 		void hit(int i)
 		{
-			health = health - i;
+			this->health -= i;
 			std::cout << "Health : " + std::to_string(health) << std::endl;
 		}
 

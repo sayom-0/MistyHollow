@@ -28,9 +28,9 @@ namespace EVNT
 			return "";
 		}
 
-		EMY::Enemy getEnemy()
+		EMY::Enemy &getEnemy()
 		{
-			return this->iev.getEnemy();
+			return iev.getEnemy();
 		}
 
 		void over()

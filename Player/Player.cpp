@@ -47,7 +47,7 @@ namespace PLY
 
 		std::string purchase(IT::Item i);
 
-		void handleEvent(EVNT::RandomEvent rv)
+		void handleEvent(EVNT::RandomEvent &rv)
 		{
 			std::cout << rv.getText() << std::endl;
 			while (!rv.isOver())
@@ -94,7 +94,6 @@ namespace PLY
 						std::cout << "You pay the chest no mind and continue though Misty Hollow..." << std::endl;
 						break;
 					}
-
 			}
 		}
 
@@ -126,7 +125,7 @@ namespace PLY
 				std::cout << "The enemy strikes you for " + std::to_string(rv.getEnemy().attack()) + " damage!"
 						  << std::endl;
 				healthCur -= rv.getEnemy().attack();
-				if(isDead())
+				if (isDead())
 					rv.over();
 			}
 		}
@@ -138,9 +137,13 @@ namespace PLY
 
 		int splattack()
 		{
-			manaCur--;
+			if (manaCur > 0)
+			{
+				manaCur--;
 
-			return attack() + (attack() * 0.5);
+				return attack() + (attack() * 0.5);
+			}
+			return 0;
 		}
 
 		void dmg(int i)

@@ -22,6 +22,7 @@ namespace REVNT
 	public:
 		RawEvent()
 		{
+			srand(time(0));
 			type = rand() % 2;
 
 			if (type == 0)
@@ -60,9 +61,9 @@ namespace REVNT
 			return text;
 		}
 
-		EMY::Enemy getEnemy()
+		EMY::Enemy &getEnemy()
 		{
-			return this->enemy;
+			return enemy;
 		}
 
 		CHT::Chest getChest()

@@ -47,7 +47,7 @@ namespace PLY
 
 		std::string purchase(IT::Item i);
 
-		void handleEvent(EVNT::RandomEvent &rv)
+		void handleEvent(EVNT::RandomEvent rv)
 		{
 			std::cout << rv.getText() << std::endl;
 			while (!rv.isOver())
@@ -102,7 +102,7 @@ namespace PLY
 			if (rv.getEnemy().isDead())
 			{
 				rv.over();
-				std::cout << "You have slain the foe! Shall you claim your reward?\n 1 - Loot\n2 - Leave" << std::endl;
+				std::cout << "You have slain the foe! Shall you claim your reward?\n 1 - Loot\n 2 - Leave" << std::endl;
 				int i;
 				std::cin >> i;
 

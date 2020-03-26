@@ -24,7 +24,6 @@ namespace EMY
 			health = rand() % 8;
 			dmg = rand() % 5;
 			safeLoot = rand() % 2;
-			std::cout << "Health (INIT) : " + std::to_string(health) << std::endl;
 		}
 
 		int attack()
@@ -35,7 +34,6 @@ namespace EMY
 		void hit(int i)
 		{
 			this->health -= i;
-			std::cout << "Health : " + std::to_string(health) << std::endl;
 		}
 
 		int loot()
@@ -45,7 +43,6 @@ namespace EMY
 
 		bool isDead()
 		{
-			std::cout << std::to_string(health) + " dead check" << std::endl;
 			return health > 0 ? false : true;
 		}
 

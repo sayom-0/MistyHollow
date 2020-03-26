@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	cout << "	--- MistyHollow Alpha 3 C++20 ---	" << endl;
+	cout << "	--- MistyHollow Alpha 4 C++20 ---	" << endl;
 	cout << "	Developed by Sayom tal Rasha \"I'm just a simple CS student trying to make my way in the universe\"" << endl;
 
 	cout << "What is your name, Hollow One?" << endl;
@@ -16,8 +16,7 @@ int main()
 		 << "You wake up lost in an empty town, wondering why no one else is around..." << endl;
 	while (!ply.isDead())
 	{
-		EVNT::RandomEvent evnt;
-		ply.handleEvent(evnt);
+		ply.handleEvent(EVNT::RandomEvent());
 	}
 	cout << "Well " + input + ", its a shame you wont live, but then again, who really does?" << endl;
 	return 0;

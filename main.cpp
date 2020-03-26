@@ -5,8 +5,10 @@ using namespace std;
 
 int main()
 {
+	cout << "	--- MistyHollow Alpha 3 C++20 ---	" << endl;
+	cout << "	Developed by Sayom tal Rasha \"I'm just a simple CS student trying to make my way in the universe\"" << endl;
+
 	PLY::Player ply;
-	EVNT::RandomEvent event;
 
 	cout << "What is your name, Hollow One?" << endl;
 	string input;
@@ -16,8 +18,7 @@ int main()
 		 << "You wake up lost in an empty town, wondering why no one else is around..." << endl;
 	while (!ply.isDead())
 	{
-		event = EVNT::RandomEvent();
-		ply.handleEvent(event);
+		ply.handleEvent(EVNT::RandomEvent());
 	}
 	cout << "Well " + input + ", its a shame you wont live, but then again, who really does?" << endl;
 	return 0;

@@ -23,7 +23,7 @@ namespace CHT
 			msgs.push_back("Wooden");
 			msgs.push_back("Icy");
 			msg = msgs[rand() % msgs.size()];
-			dgr = rand() % 1;
+			dgr = rand() % 2;
 			ov = rand() % 20;
 		}
 
@@ -35,6 +35,11 @@ namespace CHT
 		int open()
 		{
 			return ov;
+		}
+
+		bool isDgr()
+		{
+			return dgr;
 		}
 	};
 }

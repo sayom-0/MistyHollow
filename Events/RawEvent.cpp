@@ -38,7 +38,7 @@ namespace REVNT
 				chest = CHT::Chest();
 				ttv.push_back("You come across a mysterious " + chest.getType() + " chest");
 				ttv.push_back(
-						"You wipe the sweat of your face and blink, when you open your eyes again a " +
+						"You wipe the sweat off your face and blink, when you open your eyes again a " +
 						chest.getType() + " chest has appeared.");
 
 				text = ttv[rand() % ttv.size()];
@@ -51,6 +51,11 @@ namespace REVNT
 			}
 
 
+		}
+
+		void over()
+		{
+			fin = true;
 		}
 
 		std::string getText()

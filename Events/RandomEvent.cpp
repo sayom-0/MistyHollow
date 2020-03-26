@@ -26,9 +26,29 @@ namespace EVNT
 		std::string getOpt()
 		{
 			if (iev.getType() == 0)
-				return "1 - Attack \n 2 - Special Attack \n 3 - Run";
+				return " 1 - Attack \n 2 - Special Attack \n 3 - Run";
 			if (iev.getType() == 1)
-				return "1 - Open the chest \n 2 - Ignore it";
+				return " 1 - Open the chest \n 2 - Ignore it";
+		}
+
+		EMY::Enemy getEnemy()
+		{
+			return iev.getEnemy();
+		}
+
+		void over()
+		{
+			iev.over();
+		}
+
+		bool isDgr()
+		{
+			return iev.getChest().isDgr();
+		}
+
+		int open()
+		{
+			return iev.getChest().open();
 		}
 
 		int getType()

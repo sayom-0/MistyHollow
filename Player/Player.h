@@ -7,8 +7,6 @@
 
 #include <string>
 #include "../Resources/Item.h"
-
-using namespace std;
 namespace PLY
 {
 }

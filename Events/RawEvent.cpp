@@ -29,13 +29,10 @@ namespace REVNT
 				ttv.push_back("A " + enemy.getName() + " has appeared... What will you do?");
 				ttv.push_back("You hear footsteps behind you, you turn around and see a " + enemy.getName() +
 							  " ready to attack.");
-				enemy = EMY::Enemy();
-
 				text = ttv[rand() % ttv.size()];
 			}
 			if (type == 1)
 			{
-				chest = CHT::Chest();
 				ttv.push_back("You come across a mysterious " + chest.getType() + " chest");
 				ttv.push_back(
 						"You wipe the sweat off your face and blink, when you open your eyes again a " +
@@ -65,7 +62,7 @@ namespace REVNT
 
 		EMY::Enemy getEnemy()
 		{
-			return enemy;
+			return this->enemy;
 		}
 
 		CHT::Chest getChest()

@@ -13,10 +13,6 @@ namespace EVNT
 	private:
 		REVNT::RawEvent iev;
 	public:
-		RandomEvent()
-		{
-			iev = REVNT::RawEvent();
-		}
 
 		std::string getText()
 		{
@@ -29,11 +25,12 @@ namespace EVNT
 				return " 1 - Attack \n 2 - Special Attack \n 3 - Run";
 			if (iev.getType() == 1)
 				return " 1 - Open the chest \n 2 - Ignore it";
+			return "";
 		}
 
 		EMY::Enemy getEnemy()
 		{
-			return iev.getEnemy();
+			return this->iev.getEnemy();
 		}
 
 		void over()

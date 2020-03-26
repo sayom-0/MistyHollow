@@ -21,8 +21,9 @@ namespace EMY
 		{
 			name = "Generic Enemy";
 			health = (rand() % 8) + 1;
-			dmg = rand() % 3;
+			dmg = rand() % 5;
 			safeLoot = rand() % 2;
+			std::cout << "Health (INIT) : " + std::to_string(health) << std::endl;
 		}
 
 		int attack()
@@ -32,7 +33,7 @@ namespace EMY
 
 		void hit(int i)
 		{
-			health -= i;
+			health = health - i;
 			std::cout << "Health : " + std::to_string(health) << std::endl;
 		}
 
@@ -43,9 +44,8 @@ namespace EMY
 
 		bool isDead()
 		{
-			if (health > 0)
-				return false;
-			return true;
+			std::cout << std::to_string(health) + " dead check" << std::endl;
+			return health > 0 ? false : true;
 		}
 
 		bool isSafe()

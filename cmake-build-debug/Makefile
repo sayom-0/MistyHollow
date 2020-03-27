@@ -302,6 +302,33 @@ Resources/Item.cpp.s:
 	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.s
 .PHONY : Resources/Item.cpp.s
 
+Util.o: Util.cpp.o
+
+.PHONY : Util.o
+
+# target to build an object file
+Util.cpp.o:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.o
+.PHONY : Util.cpp.o
+
+Util.i: Util.cpp.i
+
+.PHONY : Util.i
+
+# target to preprocess a source file
+Util.cpp.i:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.i
+.PHONY : Util.cpp.i
+
+Util.s: Util.cpp.s
+
+.PHONY : Util.s
+
+# target to generate assembly for a file
+Util.cpp.s:
+	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.s
+.PHONY : Util.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -356,6 +383,9 @@ help:
 	@echo "... Resources/Item.o"
 	@echo "... Resources/Item.i"
 	@echo "... Resources/Item.s"
+	@echo "... Util.o"
+	@echo "... Util.i"
+	@echo "... Util.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

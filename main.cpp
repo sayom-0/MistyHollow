@@ -1,14 +1,19 @@
 #include <iostream>
+#include <ncurses.h>
 #include "Player/Player.cpp"
-
-void hold();
 
 using namespace std;
 
 int main()
 {
 	cout << "	--- MistyHollow Alpha 5 C++20 ---	" << endl;
-	cout << "	Developed by Sayom tal Rasha \"I'm just a simple CS student trying to make my way in the universe\""
+
+	WINDOW *win = stdscr;
+	initscr();
+	noecho();
+	cbreak();
+
+	cout << "	Developed by Sayom tal Rasha - \"I'm just a simple CS student trying to make my way in the Universe\""
 		 << endl;
 
 	cout << "What is your name, Hollow One?" << endl;
@@ -16,24 +21,16 @@ int main()
 	cin >> input;
 	PLY::Player ply = PLY::Player(input);
 	cout << "Well, " + input + " , welcome to Misty Hollow, you can find yourself here..." << endl;
-	hold();
+	UT::hold();
 	cout << "You wake up lost in an empty town, wondering why no one else is around..." << endl;
-	hold();
+	UT::hold();
 	while (!ply.isDead())
 	{
 		ply.handleEvent(EVNT::RandomEvent());
 	}
 	cout << "Well " + input + ", its a shame you wont live, but then again, who really does?" << endl;
+
+	endwin();
+
 	return 0;
-}
-
-void hold()
-{
-	std::cout << "Press 0 to Continue" << std::endl;
-	char enter;
-
-	do
-	{
-		std::cin.get(enter);
-	} while (enter != '0');
 }

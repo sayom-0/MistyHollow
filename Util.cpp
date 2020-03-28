@@ -9,12 +9,13 @@ namespace UT
 {
 	void static hold()
 	{
-		std::cout << "Press Enter to Continue" << std::endl;
-		char enter;
-
-		do
-			enter = getch();
-		while (enter != '\n');
+		initscr();
+		noecho();
+		cbreak();
+		std::cout << "Press any key to Continue" << std::endl;
+		getch();
+		if (system("CLS")) system("clear");
+		endwin();
 	}
 
 }

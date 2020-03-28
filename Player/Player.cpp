@@ -51,12 +51,17 @@ namespace PLY
 
 		void handleEvent(EVNT::RandomEvent rv)
 		{
+			if (system("CLS")) system("clear");
 			std::cout << rv.getText() << std::endl;
 			while (!rv.isOver())
 			{
 				std::cout << toString() << std::endl << std::endl;
 				std::cout << rv.getOpt() << std::endl;
+				initscr();
+				noecho();
+				cbreak();
 				char opt = getch();
+				endwin();
 				if (rv.getType() == 0)
 					if (opt == '1')
 					{
@@ -106,6 +111,7 @@ namespace PLY
 						break;
 					}
 			}
+			if (system("CLS")) system("clear");
 		}
 
 		void enemyDeath(EVNT::RandomEvent &rv)
@@ -114,8 +120,11 @@ namespace PLY
 			{
 				rv.over();
 				std::cout << "You have slain the foe! Shall you claim your reward?\n 1 - Loot\n 2 - Leave" << std::endl;
+				initscr();
+				noecho();
+				cbreak();
 				char i = getch();
-
+				endwin();
 				if (i == '1')
 				{
 					if (rv.getEnemy().isSafe())
@@ -123,11 +132,13 @@ namespace PLY
 						gold += rv.getEnemy().loot();
 						std::cout << "You find " + std::to_string(rv.getEnemy().loot()) + " gold on the corpse."
 								  << std::endl;
+						if (system("CLS")) system("clear");
 					} else
 					{
 						healthCur -= rv.getEnemy().loot();
 						std::cout << "The corpse explodes for " + std::to_string(rv.getEnemy().loot()) + " damage!"
 								  << std::endl;
+						if (system("CLS")) system("clear");
 					}
 				}
 			} else

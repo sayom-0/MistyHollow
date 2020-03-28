@@ -6,13 +6,8 @@ using namespace std;
 
 int main()
 {
+	if (system("CLS")) system("clear");
 	cout << "	--- MistyHollow Alpha 5 C++20 ---	" << endl;
-
-	WINDOW *win = stdscr;
-	initscr();
-	noecho();
-	cbreak();
-
 	cout << "	Developed by Sayom tal Rasha - \"I'm just a simple CS student trying to make my way in the Universe\""
 		 << endl;
 
@@ -29,8 +24,5 @@ int main()
 		ply.handleEvent(EVNT::RandomEvent());
 	}
 	cout << "Well " + input + ", its a shame you wont live, but then again, who really does?" << endl;
-
-	endwin();
-
 	return 0;
 }

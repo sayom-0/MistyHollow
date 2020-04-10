@@ -5,17 +5,14 @@
 #include <iostream>
 #include <ncurses.h>
 
-namespace UT
+void static hold()
 {
-	void static hold()
-	{
-		initscr();
-		noecho();
-		cbreak();
-		std::cout << "Press any key to Continue" << std::endl;
-		getch();
-		if (system("CLS")) system("clear");
-		endwin();
-	}
-
+	initscr();
+	noecho();
+	cbreak();
+	std::cout << "Press any key to Continue" << std::endl;
+	getch();
+	if (system("CLS")) system("clear");
+	endwin();
 }
+

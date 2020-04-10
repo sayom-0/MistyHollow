@@ -2,44 +2,35 @@
 // Created by sjet on 3/25/20.
 //
 
-#include <string>
-#include <vector>
 #include "Chest.h"
 
-namespace CHT
+std::vector<std::string> msgs;
+std::string msg;
+int ov;
+bool dgr;
+
+Chest::Chest()
 {
-	class Chest
-	{
-	private:
-		std::vector<std::string> msgs;
-		std::string msg;
-		int ov;
-		bool dgr;
-	public:
-		Chest()
-		{
-			msgs.push_back("Gold Plated");
-			msgs.push_back("Silver");
-			msgs.push_back("Wooden");
-			msgs.push_back("Icy");
-			msg = msgs[rand() % msgs.size()];
-			dgr = rand() % 2;
-			ov = rand() % 20;
-		}
+	msgs.push_back("Gold Plated");
+	msgs.push_back("Silver");
+	msgs.push_back("Wooden");
+	msgs.push_back("Icy");
+	msg = msgs[rand() % msgs.size()];
+	dgr = rand() % 2;
+	ov = rand() % 20;
+}
 
-		std::string getType()
-		{
-			return msg;
-		}
+std::string Chest::getType()
+{
+	return msg;
+}
 
-		int open()
-		{
-			return ov;
-		}
+int Chest::open()
+{
+	return ov;
+}
 
-		bool isDgr()
-		{
-			return dgr;
-		}
-	};
+bool Chest::isDgr()
+{
+	return dgr;
 }

@@ -5,13 +5,10 @@
 #ifndef HOLLOW_ITEM_H
 #define HOLLOW_ITEM_H
 
-namespace IT
+class Item
 {
-	class Item
-	{
 
-	};
-}
+};
 
 
 #endif //HOLLOW_ITEM_H

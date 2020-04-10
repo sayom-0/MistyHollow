@@ -6,4 +6,7 @@
 #define HOLLOW_UTIL_H
 
 
+void static hold();
+
+
 #endif //HOLLOW_UTIL_H

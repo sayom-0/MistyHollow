@@ -40,6 +40,9 @@ default_target: all
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Command-line flag to silence nested $(MAKE).
+$(VERBOSE)MAKESILENT = -s
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -98,13 +101,13 @@ edit_cache/fast: edit_cache
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjet/CLionProjects/MistyHollow/cmake-build-debug/CMakeFiles /home/sjet/CLionProjects/MistyHollow/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sjet/CLionProjects/MistyHollow/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -114,12 +117,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -132,12 +135,12 @@ depend:
 
 # Build rule for target.
 Hollow: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Hollow
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Hollow
 .PHONY : Hollow
 
 # fast build rule for target.
 Hollow/fast:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/build
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/build
 .PHONY : Hollow/fast
 
 Events/RandomEvent.o: Events/RandomEvent.cpp.o
@@ -146,7 +149,7 @@ Events/RandomEvent.o: Events/RandomEvent.cpp.o
 
 # target to build an object file
 Events/RandomEvent.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.o
 .PHONY : Events/RandomEvent.cpp.o
 
 Events/RandomEvent.i: Events/RandomEvent.cpp.i
@@ -155,7 +158,7 @@ Events/RandomEvent.i: Events/RandomEvent.cpp.i
 
 # target to preprocess a source file
 Events/RandomEvent.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.i
 .PHONY : Events/RandomEvent.cpp.i
 
 Events/RandomEvent.s: Events/RandomEvent.cpp.s
@@ -164,7 +167,7 @@ Events/RandomEvent.s: Events/RandomEvent.cpp.s
 
 # target to generate assembly for a file
 Events/RandomEvent.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RandomEvent.cpp.s
 .PHONY : Events/RandomEvent.cpp.s
 
 Events/RawEvent.o: Events/RawEvent.cpp.o
@@ -173,7 +176,7 @@ Events/RawEvent.o: Events/RawEvent.cpp.o
 
 # target to build an object file
 Events/RawEvent.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.o
 .PHONY : Events/RawEvent.cpp.o
 
 Events/RawEvent.i: Events/RawEvent.cpp.i
@@ -182,7 +185,7 @@ Events/RawEvent.i: Events/RawEvent.cpp.i
 
 # target to preprocess a source file
 Events/RawEvent.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.i
 .PHONY : Events/RawEvent.cpp.i
 
 Events/RawEvent.s: Events/RawEvent.cpp.s
@@ -191,7 +194,7 @@ Events/RawEvent.s: Events/RawEvent.cpp.s
 
 # target to generate assembly for a file
 Events/RawEvent.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Events/RawEvent.cpp.s
 .PHONY : Events/RawEvent.cpp.s
 
 Player/Player.o: Player/Player.cpp.o
@@ -200,7 +203,7 @@ Player/Player.o: Player/Player.cpp.o
 
 # target to build an object file
 Player/Player.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.o
 .PHONY : Player/Player.cpp.o
 
 Player/Player.i: Player/Player.cpp.i
@@ -209,7 +212,7 @@ Player/Player.i: Player/Player.cpp.i
 
 # target to preprocess a source file
 Player/Player.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.i
 .PHONY : Player/Player.cpp.i
 
 Player/Player.s: Player/Player.cpp.s
@@ -218,7 +221,7 @@ Player/Player.s: Player/Player.cpp.s
 
 # target to generate assembly for a file
 Player/Player.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
 Resources/Chest.o: Resources/Chest.cpp.o
@@ -227,7 +230,7 @@ Resources/Chest.o: Resources/Chest.cpp.o
 
 # target to build an object file
 Resources/Chest.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.o
 .PHONY : Resources/Chest.cpp.o
 
 Resources/Chest.i: Resources/Chest.cpp.i
@@ -236,7 +239,7 @@ Resources/Chest.i: Resources/Chest.cpp.i
 
 # target to preprocess a source file
 Resources/Chest.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.i
 .PHONY : Resources/Chest.cpp.i
 
 Resources/Chest.s: Resources/Chest.cpp.s
@@ -245,7 +248,7 @@ Resources/Chest.s: Resources/Chest.cpp.s
 
 # target to generate assembly for a file
 Resources/Chest.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Chest.cpp.s
 .PHONY : Resources/Chest.cpp.s
 
 Resources/Enemy.o: Resources/Enemy.cpp.o
@@ -254,7 +257,7 @@ Resources/Enemy.o: Resources/Enemy.cpp.o
 
 # target to build an object file
 Resources/Enemy.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.o
 .PHONY : Resources/Enemy.cpp.o
 
 Resources/Enemy.i: Resources/Enemy.cpp.i
@@ -263,7 +266,7 @@ Resources/Enemy.i: Resources/Enemy.cpp.i
 
 # target to preprocess a source file
 Resources/Enemy.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.i
 .PHONY : Resources/Enemy.cpp.i
 
 Resources/Enemy.s: Resources/Enemy.cpp.s
@@ -272,7 +275,7 @@ Resources/Enemy.s: Resources/Enemy.cpp.s
 
 # target to generate assembly for a file
 Resources/Enemy.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Enemy.cpp.s
 .PHONY : Resources/Enemy.cpp.s
 
 Resources/Item.o: Resources/Item.cpp.o
@@ -281,7 +284,7 @@ Resources/Item.o: Resources/Item.cpp.o
 
 # target to build an object file
 Resources/Item.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.o
 .PHONY : Resources/Item.cpp.o
 
 Resources/Item.i: Resources/Item.cpp.i
@@ -290,7 +293,7 @@ Resources/Item.i: Resources/Item.cpp.i
 
 # target to preprocess a source file
 Resources/Item.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.i
 .PHONY : Resources/Item.cpp.i
 
 Resources/Item.s: Resources/Item.cpp.s
@@ -299,8 +302,35 @@ Resources/Item.s: Resources/Item.cpp.s
 
 # target to generate assembly for a file
 Resources/Item.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.s
 .PHONY : Resources/Item.cpp.s
+
+Resources/Town.o: Resources/Town.cpp.o
+
+.PHONY : Resources/Town.o
+
+# target to build an object file
+Resources/Town.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Town.cpp.o
+.PHONY : Resources/Town.cpp.o
+
+Resources/Town.i: Resources/Town.cpp.i
+
+.PHONY : Resources/Town.i
+
+# target to preprocess a source file
+Resources/Town.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Town.cpp.i
+.PHONY : Resources/Town.cpp.i
+
+Resources/Town.s: Resources/Town.cpp.s
+
+.PHONY : Resources/Town.s
+
+# target to generate assembly for a file
+Resources/Town.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Town.cpp.s
+.PHONY : Resources/Town.cpp.s
 
 Util.o: Util.cpp.o
 
@@ -308,7 +338,7 @@ Util.o: Util.cpp.o
 
 # target to build an object file
 Util.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.o
 .PHONY : Util.cpp.o
 
 Util.i: Util.cpp.i
@@ -317,7 +347,7 @@ Util.i: Util.cpp.i
 
 # target to preprocess a source file
 Util.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.i
 .PHONY : Util.cpp.i
 
 Util.s: Util.cpp.s
@@ -326,7 +356,7 @@ Util.s: Util.cpp.s
 
 # target to generate assembly for a file
 Util.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Util.cpp.s
 .PHONY : Util.cpp.s
 
 main.o: main.cpp.o
@@ -335,7 +365,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -344,7 +374,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -353,7 +383,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -383,6 +413,9 @@ help:
 	@echo "... Resources/Item.o"
 	@echo "... Resources/Item.i"
 	@echo "... Resources/Item.s"
+	@echo "... Resources/Town.o"
+	@echo "... Resources/Town.i"
+	@echo "... Resources/Town.s"
 	@echo "... Util.o"
 	@echo "... Util.i"
 	@echo "... Util.s"

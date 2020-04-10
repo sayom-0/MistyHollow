@@ -2,60 +2,48 @@
 // Created by sjet on 3/24/20.
 //
 
-#include <string>
-#include <iostream>
 #include "Enemy.h"
 
-namespace EMY
+std::string name;
+int health;
+int dmg;
+bool safeLoot;
+
+Enemy::Enemy()
 {
-	class Enemy
-	{
-	private:
-		std::string name;
-		int health;
-		int dmg;
-		bool safeLoot;
-	public:
+	name = "Generic Enemy";
+	srand(time(0));
+	health = rand() % 8;
+	dmg = rand() % 5;
+	safeLoot = rand() % 2;
+}
 
-		Enemy()
-		{
-			name = "Generic Enemy";
-			srand(time(0));
-			health = rand() % 8;
-			dmg = rand() % 5;
-			safeLoot = rand() % 2;
-		}
+int Enemy::attack()
+{
+	return dmg;
+}
 
-		int attack()
-		{
-			return dmg;
-		}
+void Enemy::hit(int i)
+{
+	health -= i;
+}
 
-		void hit(int i)
-		{
-			this->health -= i;
-		}
+int Enemy::loot()
+{
+	return rand() % 5;
+}
 
-		int loot()
-		{
-			return rand() % 5;
-		}
+bool Enemy::isDead()
+{
+	return health > 0 ? false : true;
+}
 
-		bool isDead()
-		{
-			return health > 0 ? false : true;
-		}
+bool Enemy::isSafe()
+{
+	return safeLoot;
+}
 
-		bool isSafe()
-		{
-			return safeLoot;
-		}
-
-		std::string getName()
-		{
-			return name;
-		}
-
-
-	};
+std::string Enemy::getName()
+{
+	return name;
 }

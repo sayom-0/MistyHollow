@@ -29,6 +29,8 @@ public:
 	int getType();
 
 	bool isOver();
+
+	Town &getTown();
 };
 
 

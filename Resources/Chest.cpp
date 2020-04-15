@@ -11,10 +11,11 @@ bool dgr;
 
 Chest::Chest()
 {
-	msgs.push_back("Gold Plated");
-	msgs.push_back("Silver");
-	msgs.push_back("Wooden");
-	msgs.push_back("Icy");
+	srand(time(0));
+	msgs.emplace_back("Gold Plated");
+	msgs.emplace_back("Silver");
+	msgs.emplace_back("Wooden");
+	msgs.emplace_back("Icy");
 	msg = msgs[rand() % msgs.size()];
 	dgr = rand() % 2;
 	ov = rand() % 20;

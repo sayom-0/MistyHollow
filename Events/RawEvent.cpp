@@ -20,15 +20,15 @@ RawEvent::RawEvent()
 
 	if (type == 0)
 	{
-		ttv.push_back("A " + enemy.getName() + " has appeared... What will you do?");
-		ttv.push_back("You hear footsteps behind you, you turn around and see a " + enemy.getName() +
+		ttv.emplace_back("A " + enemy.getName() + " has appeared... What will you do?");
+		ttv.emplace_back("You hear footsteps behind you, you turn around and see a " + enemy.getName() +
 					  " ready to attack.");
 		text = ttv[rand() % ttv.size()];
 	}
 	if (type == 1)
 	{
-		ttv.push_back("You come across a mysterious " + chest.getType() + " chest");
-		ttv.push_back(
+		ttv.emplace_back("You come across a mysterious " + chest.getType() + " chest");
+		ttv.emplace_back(
 				"You wipe the sweat off your face and blink, when you open your eyes again a " +
 				chest.getType() + " chest has appeared.");
 
@@ -36,8 +36,8 @@ RawEvent::RawEvent()
 	}
 	if (type == 2)
 	{
-		ttv.push_back("You come across what seems to be a small town.");
-		ttv.push_back("As you make your way out of a foliage dense path, you see a town in the distance.");
+		ttv.emplace_back("You come across what seems to be a small town.");
+		ttv.emplace_back("As you make your way out of a foliage dense path, you see a town in the distance.");
 
 		text = ttv[rand() % ttv.size()];
 	}
@@ -60,9 +60,14 @@ Enemy &RawEvent::getEnemy()
 	return enemy;
 }
 
-Chest RawEvent::getChest()
+Chest &RawEvent::getChest()
 {
 	return chest;
+}
+
+Town &RawEvent::getTown()
+{
+	return town;
 }
 
 int RawEvent::getType()

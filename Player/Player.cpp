@@ -44,6 +44,7 @@ void Player::handleEvent(RandomEvent rv)
 		char opt = getch();
 		endwin();
 		if (rv.getType() == 0)
+		{
 			if (opt == '1')
 			{
 				std::cout << "You attack the enemy for " + std::to_string(attack()) + " damage." << std::endl;
@@ -68,7 +69,8 @@ void Player::handleEvent(RandomEvent rv)
 				std::cout << "Plagued by indecision, you freeze." << std::endl;
 				hold();
 			}
-		else if (rv.getType() == 1)
+		} else if (rv.getType() == 1)
+		{
 			if (opt == '1')
 			{
 				std::cout << "You approach the Chest, And open it." << std::endl;
@@ -91,6 +93,61 @@ void Player::handleEvent(RandomEvent rv)
 				hold();
 				break;
 			}
+		} else if (rv.getType() == 2)
+		{
+
+			if (opt == '1')
+			{
+				for (int i = 0; i != 1;)
+				{
+					if (system("CLS")) system("clear");
+					std::cout << toString() << std::endl << std::endl;
+					if (rv.getTown().getRest())
+						std::cout << "1 - Enter Inn" << std::endl;
+					if (rv.getTown().getShop())
+						std::cout << "2 - Enter Shop" << std::endl;
+					if (rv.getTown().getQuest())
+						std::cout << "3 - Check Quest Board" << std::endl;
+					std::cout << "4 - Exit Town" << std::endl;
+
+					initscr();
+					noecho();
+					cbreak();
+					switch (getch())
+					{
+						case '1':
+							endwin();
+
+							break;
+
+						case '2':
+							endwin();
+
+							break;
+
+						case '3':
+							endwin();
+
+							break;
+
+						case '4':
+							endwin();
+							std::cout << "You gather your things and set out into the unknown..." << std::endl;
+							hold();
+							i = 1;
+							break;
+
+					}
+				}
+				break;
+
+			} else if (opt == '2')
+			{
+				std::cout << "You ignore the town and continue through the hollow mist..." << std::endl;
+				hold();
+				break;
+			}
+		}
 	}
 	if (system("CLS")) system("clear");
 }

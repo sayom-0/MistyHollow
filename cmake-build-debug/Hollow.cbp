@@ -118,6 +118,12 @@
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Item.h">
 			<Option target="Hollow"/>
 		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Shop.cpp">
+			<Option target="Hollow"/>
+		</Unit>
+		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Shop.h">
+			<Option target="Hollow"/>
+		</Unit>
 		<Unit filename="/home/sjet/CLionProjects/MistyHollow/Resources/Town.cpp">
 			<Option target="Hollow"/>
 		</Unit>

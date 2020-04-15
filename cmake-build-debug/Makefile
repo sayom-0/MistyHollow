@@ -305,6 +305,33 @@ Resources/Item.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Item.cpp.s
 .PHONY : Resources/Item.cpp.s
 
+Resources/Shop.o: Resources/Shop.cpp.o
+
+.PHONY : Resources/Shop.o
+
+# target to build an object file
+Resources/Shop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Shop.cpp.o
+.PHONY : Resources/Shop.cpp.o
+
+Resources/Shop.i: Resources/Shop.cpp.i
+
+.PHONY : Resources/Shop.i
+
+# target to preprocess a source file
+Resources/Shop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Shop.cpp.i
+.PHONY : Resources/Shop.cpp.i
+
+Resources/Shop.s: Resources/Shop.cpp.s
+
+.PHONY : Resources/Shop.s
+
+# target to generate assembly for a file
+Resources/Shop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hollow.dir/build.make CMakeFiles/Hollow.dir/Resources/Shop.cpp.s
+.PHONY : Resources/Shop.cpp.s
+
 Resources/Town.o: Resources/Town.cpp.o
 
 .PHONY : Resources/Town.o
@@ -413,6 +440,9 @@ help:
 	@echo "... Resources/Item.o"
 	@echo "... Resources/Item.i"
 	@echo "... Resources/Item.s"
+	@echo "... Resources/Shop.o"
+	@echo "... Resources/Shop.i"
+	@echo "... Resources/Shop.s"
 	@echo "... Resources/Town.o"
 	@echo "... Resources/Town.i"
 	@echo "... Resources/Town.s"

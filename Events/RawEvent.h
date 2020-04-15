@@ -21,7 +21,7 @@ private:
 	Chest chest;
 	Town town;
 	int type;
-	bool fin;
+	bool fin{};
 public:
 	RawEvent();
 
@@ -31,11 +31,13 @@ public:
 
 	Enemy &getEnemy();
 
-	Chest getChest();
+	Chest & getChest();
 
 	int getType();
 
 	bool isOver();
+
+	Town & getTown();
 };
 
 
